@@ -1,0 +1,28 @@
+.app-container{
+margin: 10px;
+}
+
+.nav{
+  background-color: purple;
+  color: white;
+  padding: 20px;/* padding is space inside the box*/s
+  border: solid 4px;
+  border-radius: 20px;
+
+}
+.nav-item-container{
+  display: flex;
+  justify-content: space-around;
+}
+.nav-item-container > li {
+  font-size: 24px;
+  text-style: none;
+}
+
+.jumbotron{
+  margin: 10px;
+  padding: 20px;
+  border: solid 4px blue;
+  border-radius: 20px;
+
+}
