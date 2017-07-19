@@ -27,6 +27,7 @@ const Product = (props) => {
     <div className="product">
       <h2>{props.itemName}</h2>
       <p>{props.itemDiscription}</p>
+      <img src={props.img} />
 
     </div>
   )
@@ -38,6 +39,7 @@ const WebApp = () => {
     <Jumbotron header="🍞 Super Duper Web App  🍞" />
     <Product itemName="Razer mouse" />
     <Product itemDiscription="Free Razer mouse with any puchase of Razer Keyboard" />
+
     </div>
   )
 }
