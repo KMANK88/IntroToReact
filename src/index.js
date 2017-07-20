@@ -1,12 +1,16 @@
  import React from 'react';
  import ReactDOM from 'react-dom';
  import './style.css';
- import WebApp from'./webApp';
+ import WebApp from'./WebApp/App';
  import Data from'./Data';
  import MappingAndFiltering from'./MappingAndFiltering';
 
 
 ReactDOM.render(
-  <MappingAndFiltering
-  title={"Maps woo woo!"} allTheData={Data}
-  />, document.getElementById('root'));
+  <WebApp />, document.getElementById('root'));
+
+
+
+//  <MappingAndFiltering
+//  title={"Maps woo woo!"} allTheData={Data}
+//  />, document.getElementById('root'));
