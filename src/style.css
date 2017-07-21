@@ -30,3 +30,12 @@ margin: 10px;
 .myImg{
   max-width: 300px;
 }
+
+.chat-container{
+display: flex;
+flex-wrap: wrap;
+}
+.chat-container > div {
+  width: 33.33333%;
+
+}
