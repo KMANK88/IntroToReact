@@ -2,44 +2,31 @@
  import React from 'react';
  import ReactDOM from 'react-dom';
  import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+ import NavigationBar from './components/NavigationBar';
+ import App from './WebApp/App';
+ import ChatApp from './Chatter/ChatApp';
+ import './style.css';
+ import ReactApp from './ACME_ReactApp';
+
 
  const Home = () => {
    return(
-
    <div>
      <h3>Hello from home </h3>
    </div>
    )
  }
 
- const About = () => {
-   return(
-     <div>
-       <h3> Hello from About</h3>
-     </div>
-   )
- }
-
- const Blog = () => {
-   return(
-     <div>
-       <h3> Hello from Blog</h3>
-     </div>
-   )
- }
-
-
 ReactDOM.render((
   <Router>
     <div>
-      <ul>
-        <li><Link to="/"> Home</Link></li>
-        <li><Link to="/about"> About</Link></li>
-        <li><Link to="/blog"> Blog</Link></li>
-      </ul>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/blog" component={Blog} />
+    <NavigationBar />
+
+
+      <Route exact path="/" component={Home} />
+      <Route path='/i-do-what-i-want' component={App} />
+      <Route path="/fake-chat" component={ChatApp} />
+      <Route path="/Homework-stuff" component={ReactApp} />
     </div>
   </Router>
 ), document.getElementById('root'));
@@ -54,7 +41,7 @@ ReactDOM.render((
 
 
 
- /*import './style.css';
+ /*
  import WebApp from'./WebApp/App';
  import Data from'./Data';
  import MappingAndFiltering from'./MappingAndFiltering';
