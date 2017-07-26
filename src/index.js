@@ -7,7 +7,7 @@
  import ChatApp from './Chatter/ChatApp';
  import './style.css';
  import ReactApp from './ACME_ReactApp';
-
+ import Playground from './playground/app';
 
  const Home = () => {
    return(
@@ -21,34 +21,11 @@ ReactDOM.render((
   <Router>
     <div>
     <NavigationBar />
-
-
       <Route exact path="/" component={Home} />
       <Route path='/i-do-what-i-want' component={App} />
       <Route path="/fake-chat" component={ChatApp} />
       <Route path="/Homework-stuff" component={ReactApp} />
+      <Route path="/playground" component={Playground} />
     </div>
   </Router>
 ), document.getElementById('root'));
-
-
-
-
-
-
-
-
-
-
-
- /*
- import WebApp from'./WebApp/App';
- import Data from'./Data';
- import MappingAndFiltering from'./MappingAndFiltering';
- import ChatApp from'./Chatter/ChatApp';
- import ChatData from './Chatter/DATA';
-
-//getting the info from the main class we want info from
-ReactDOM.render(
-  <ChatApp  data={ChatData} />, document.getElementById('root'));
-*/
