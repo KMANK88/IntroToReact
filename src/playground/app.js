@@ -1,4 +1,5 @@
 import React from 'react';
+import faker from 'faker';
 
 const UsersList = (props) => {
   return (
@@ -18,20 +19,36 @@ const UsersList = (props) => {
   )
 }
 
+const Counter = (props) => {
+  return(
+    <div>
+        <p> counter: {props.counter}</p>
+          <button onClick={
+            () => props.increaseCount()}> Increase Counter </button>
+          <button onClick={
+            () => props.decreaseCount()}> Decrese Counter </button>
 
+    </div>
+  )
+}
 
 class Playground extends React.Component {
 
   state = {
     name: "Karsten",
     counter: 0,
-    users: null
+    users: null,
+    showCounter: true
   }
 
-
+increaseCount = this.increaseCount.bind(this)
+decreaseCount = this.decreaseCount.bind(this)
 
   componentDidMount() {
     this.fetchUsersFromServer()
+    const randomName = faker.name.firstName();
+    const someProd = faker.commerce.product();
+    alert (someProd);
   }
 
   fetchUsersFromServer(){
@@ -47,34 +64,41 @@ class Playground extends React.Component {
     }, 3000)
   }
 
-  incrementCounter(){
+  increaseCount(){
     this.setState ({ counter: this.state.counter +=1})
 
   }
 
-  decreseCounter(){
+  decreaseCount(){
     this.setState ({ counter: this.state.counter -=1})
+  }
+
+  toggleCounter(){
+    this.setState({showCounter: !this.state.showCounter})
   }
 
   render() {
     return (
-      <div>
-        <h1> my name is: {this.state.name} </h1>
-        <p> counter: {this.state.counter}</p>
-        <button onClick={
-          () => this.incrementCounter()}> Increase Counter </button>
-          <button onClick={
-            () => this.decreseCounter()}> Decrese Counter </button>
-
-          {
-            this.state.users
-            ? <UsersList userData={this.state.users}/>
-            : <h1> Users Being Loaded</h1>
+      <div className="playground-main">
+        <button className={this.state.showCounter ? "open-btn" : "close-btn"}
+         onClick={() => this.toggleCounter()}> {this.state.showCounter ? "Open" : "Close"}</button>
+        {
+        this.state.showCounter
+        ?<Counter
+        counter={this.state.counter}
+        increaseCount={this.increaseCount}
+        decreaseCount={this.decreaseCount}
+        />: null
+      }
+      {
+        this.state.users
+        ? <UsersList userData={this.state.users}/>
+        : <h1> Users Being Loaded</h1>
           }
 
       </div>
     )
   }
-}
 
+}
 export default Playground;

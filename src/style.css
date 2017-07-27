@@ -27,6 +27,7 @@ margin: 10px;
 
 }
 
+
 .myImg{
   max-width: 300px;
 }
@@ -38,4 +39,16 @@ flex-wrap: wrap;
 .chat-container > div {
   width: 33.33333%;
 
+}
+
+.open-btn{
+  background-color: red;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+.close-btn{
+  background-color: green;
+  border-radius: 10px;
+  font-size: 20px;
 }
