@@ -1,36 +1,7 @@
 import React from 'react';
 import faker from 'faker';
-
-const UsersList = (props) => {
-  return (
-    <div>
-      <h1> Found Usres List </h1>
-      <ul>
-        {
-          props.userData.map((user,index) =>{
-            return <div>
-            <li key={index}> {user.name} </li>
-            </div>
-
-          })
-        }
-      </ul>
-    </div>
-  )
-}
-
-const Counter = (props) => {
-  return(
-    <div>
-        <p> counter: {props.counter}</p>
-          <button onClick={
-            () => props.increaseCount()}> Increase Counter </button>
-          <button onClick={
-            () => props.decreaseCount()}> Decrese Counter </button>
-
-    </div>
-  )
-}
+import Counter from './Counter';
+import UsersList from './UsersList';
 
 class Playground extends React.Component {
 
