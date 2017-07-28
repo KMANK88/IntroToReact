@@ -4,7 +4,7 @@ import{Link} from 'react-router-dom';
 const NavigationBar = () => {
    return(
     <div>
-      <ul>
+      <ul className='nav-item-container'>
         <li> <Link to="/"> Home </Link></li>
         <li> <Link to="/i-do-what-i-want"> Super App </Link></li>
         <li> <Link to="/fake-chat"> ChatApp </Link></li>

@@ -11,7 +11,7 @@
 
  const Home = () => {
    return(
-   <div>
+   <div className='jumbotron-main'>
      <h3>Hello from home </h3>
    </div>
    )

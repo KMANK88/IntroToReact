@@ -4,16 +4,20 @@ const UsersList = (props) => {
   return (
     <div>
       <h1> Found Usres List </h1>
-      <ul>
-        {
-          props.userData.map((user,index) =>{
-            return <div>
-            <li key={index}> {user.name} </li>
-            </div>
 
+      <div className='userCardContainer'>
+        {
+          props.userData.map((users,index) =>{
+            return(
+            <div className='userCard'>
+              <h3>{users.firstName}</h3>
+              <h3>{users.lastName}</h3>
+              <img src={users.img} />
+            </div>
+          )
           })
         }
-      </ul>
+      </div>
     </div>
   )
 }

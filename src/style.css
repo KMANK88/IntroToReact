@@ -12,10 +12,13 @@ margin: 10px;
 }
 .nav-item-container{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+
+
 }
 .nav-item-container > li {
-  font-size: 24px;
+  font-size: 12px;
   text-style: none;
 }
 
@@ -51,4 +54,23 @@ flex-wrap: wrap;
   background-color: green;
   border-radius: 10px;
   font-size: 20px;
+}
+
+.userCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px dotted red;
+  width: calc(50% - 20px);/*px in equasion has to be 2x what the margin is.*/
+  margin: 10px;
+}
+
+.userCard img {
+  max-width: 90%;
+  margin: 10px;
+}
+.userCardContainer{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
